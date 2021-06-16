@@ -24,7 +24,8 @@
     "test:types": "dtslint test-dts --localTs ../../node_modules/typescript/lib --expectOnly",
     "prepack": "tsdx build --tsconfig tsconfig.dist.json",
     "test": "yarn test:unit && yarn test:types",
-    "docs": "yarn typedoc src/index.ts",
+    "docs": "yarn typedoc src/index.ts --out docs/atom",
+    "doc": "parcel docs/atom/index.html",
     "mocha": "mocha -r ts-node/register"
   },
   "devDependencies": {
@@ -34,13 +35,14 @@
     "dtslint": "^4.0.7",
     "expect": "^25.4.0",
     "mocha": "^8.3.1",
+    "parcel": "^2.0.0-beta.2",
     "ts-node": "^8.9.0",
     "tsdx": "0.13.2",
     "typedoc": "^0.20.36",
     "typescript": "^3.7.0"
   },
   "volta": {
-    "node": "12.16.0",
+    "node": "12.18.3",
     "yarn": "1.19.1"
   },
   "dependencies": {

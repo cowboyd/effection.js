@@ -14,6 +14,7 @@ yarn-error.log
 */**/yarn.lock
 !website/yarn.lock
 .DS_Store
+.parcel-cache
 
 # Local Netlify folder
 .netlify
