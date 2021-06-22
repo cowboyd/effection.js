@@ -14,7 +14,6 @@
     "lint": "eslint '{src,bin,test}/**/*.ts'",
     "test": "mocha -r ts-node/register 'test/**/*.test.ts'",
     "mocha": "mocha -r ts-node/register",
-    "docs": "yarn typedoc src/index.ts",
     "prepack": "tsdx build --tsconfig tsconfig.dist.json"
   },
   "files": [
@@ -31,8 +30,7 @@
     "mocha": "^8.3.1",
     "ts-node": "^8.8.2",
     "tsdx": "0.13.2",
-    "typedoc": "^0.20.36",
-    "typescript": "^3.8.3"
+    "typescript": "^4.0.0"
   },
   "dependencies": {}
 }

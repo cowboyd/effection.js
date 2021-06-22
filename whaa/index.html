@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>effection-monorepo</title>
+	<meta name="description" content="Documentation for effection-monorepo">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">effection-monorepo</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>effection-monorepo</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><a href="https://www.npmjs.com/package/effection"><img src="https://img.shields.io/npm/v/effection.svg" alt="npm"></a>
+					<a href="https://bundlephobia.com/result?p=effection"><img src="https://img.shields.io/bundlephobia/minzip/effection" alt="bundle size (minified + gzip)"></a>
+					<a href="https://circleci.com/gh/thefrontside/effection"><img src="https://circleci.com/gh/thefrontside/effection.svg?style=shield" alt="CircleCI"></a>
+					<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+					<a href="https://frontside.com"><img src="https://img.shields.io/badge/created%20by-frontside-26abe8.svg" alt="Created by Frontside"></a>
+				<a href="https://discord.gg/Ug5nWH8"><img src="https://img.shields.io/discord/700803887132704931?Label=Discord" alt="Chat on Discord"></a></p>
+				<a href="#effection" id="effection" style="color: inherit; text-decoration: none;">
+					<h1>Effection</h1>
+				</a>
+				<p>A framework for Node and the browser that makes building concurrent
+				systems easy to get right.</p>
+				<a href="#why-use-effection" id="why-use-effection" style="color: inherit; text-decoration: none;">
+					<h2>Why use Effection?</h2>
+				</a>
+				<p>Using Effection provides many benefits over using plain Promises and
+				<code>async/await</code> code:</p>
+				<ul>
+					<li><strong>Cleanup:</strong> Effection code cleans up after itself, and that means never having
+					to remember to manually close a resource or detach a listener.</li>
+					<li><strong>Cancellation:</strong> Any Effection task can be cancelled, which will completely
+						stop that task, as well as stopping any other tasks this operation itself has
+					started.</li>
+					<li><strong>Synchronicity:</strong> Unlike Promises and <code>async/await</code>, Effection is fundamentally
+						synchronous in nature, this means you have full control over the event loop
+					and operations requiring synchronous setup remain race condition free.</li>
+					<li><strong>Composition:</strong> Since all Effection code is well behaved, it
+						composes easily, and there  are no nasty surprises when trying to
+					fit different pieces together.</li>
+				</ul>
+				<p>JavaScript has gone through multiple evolutionary steps in how to deal
+					with concurrency: from callbacks and events, to promises, and then
+					finally to <code>async/await</code>. Yet it can still be difficult to write
+					concurrent code which is both correct and composable, and unless
+					you&#39;re very careful, it is still easy to leak resources. Also, most
+					JavaScript code and libraries do not handle cancellation very well,
+					and failure conditions can easily lead to dangling promises and other
+				unexpected behavior.</p>
+				<p>Effection leverages the idea of <a href="https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/">structured concurrency</a>
+					to ensure that you don&#39;t leak any resources, and that cancellation is
+					properly handled. It helps you build concurrent code that feels rock
+					solid and behaves well under all failure conditions. In essence,
+					Effection allows you to compose concurrent code so that you can reason
+				about its behavior.</p>
+				<a href="#replacing-asyncawait" id="replacing-asyncawait" style="color: inherit; text-decoration: none;">
+					<h2>Replacing async/await</h2>
+				</a>
+				<p>If you know how to use <code>async/await</code>, then you&#39;re already familiar with most of
+					what you need to know to use Effection. The only difference is that instead
+					of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async functions</a>, you use
+				<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">generators</a> and replace:</p>
+				<ol>
+					<li><code>await</code> with <code>yield</code></li>
+					<li><code>async function()</code> with <code>function*()</code></li>
+				</ol>
+				<p>For example, with <code>async</code>/<code>await</code>:</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">fetch</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;isomorphic-fetch&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">fetchWeekDay</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">response</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">fetch</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;http://worldclockapi.com/api/json/est/now&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">time</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">response</span><span style="color: #000000">.</span><span style="color: #795E26">json</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">time</span><span style="color: #000000">.</span><span style="color: #001080">dayOfTheWeek</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>With Effection:</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">fetch</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@effection/fetch&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #795E26">fetchWeekDay</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">response</span><span style="color: #000000"> = </span><span style="color: #AF00DB">yield</span><span style="color: #000000"> </span><span style="color: #795E26">fetch</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;http://worldclockapi.com/api/json/est/now&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">time</span><span style="color: #000000"> = </span><span style="color: #AF00DB">yield</span><span style="color: #000000"> </span><span style="color: #001080">response</span><span style="color: #000000">.</span><span style="color: #795E26">json</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">time</span><span style="color: #000000">.</span><span style="color: #001080">dayOfTheWeek</span><span style="color: #000000">;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting started.</h2>
+				</a>
+				<p>To start using Effection, use the <code>main</code> function as an entry
+					point. In this example, we&#39;ll use the previously defined
+				<code>getWeekDay</code>.</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">main</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;effection&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">getWeekDay</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./get-week-day&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #795E26">main</span><span style="color: #000000">(</span><span style="color: #0000FF">function*</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dayOfTheWeek</span><span style="color: #000000"> = </span><span style="color: #AF00DB">yield</span><span style="color: #000000"> </span><span style="color: #795E26">fetchWeekDay</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`It is </span><span style="color: #0000FF">${</span><span style="color: #001080">dayOfTheWeek</span><span style="color: #0000FF">}</span><span style="color: #A31515">, my friends!`</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>Let&#39;s go through what&#39;s going on here:</p>
+				<ul>
+					<li>The argument to <code>main</code> is what&#39;s called an <code>Operation</code>.</li>
+					<li>One example of an operation is a generator function.</li>
+					<li>Promises are also operations.</li>
+					<li>Inside the generator function we can <code>yield</code> to other operations.</li>
+					<li>In this case, we yield to the <code>fetchWeekDay()</code> operation, which
+						itself yields to the <code>fetch()</code> operation and the <code>response.json()</code>
+					operation.</li>
+					<li>When the operation passed to <code>main</code> completes, the program exits.</li>
+				</ul>
+				<p>Even with such a simple program, Effection is still providing critical
+					power-ups to you behind the scenes that you don&#39;t get with callbacks,
+					promises, or <code>async/await</code>. For example, if you run the above in
+					NodeJS and hit <code>CTRL-C</code> while the request to <code>http://worldclockapi.com</code> is
+					still in progress, it will properly cancel the in-flight request
+					as a well-behaved HTTP client should. All without you ever having to
+					think about it. This is because every Effection operation contains
+					the information on how to dispose of itself, and so the actual act of
+				cancellation can be automated.</p>
+				<p>This has powerful consequences when it comes to composing new
+					operations out of existing ones. For example, we can add a time out of
+					1000 milliseconds to our <code>fetchWeekDay</code> operation (or any operation
+					for that matter) by wrapping it with the <code>withTimeout</code> operation from
+				the standard <code>effection</code> module.</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">main</span><span style="color: #000000">, </span><span style="color: #001080">withTimeout</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;effection&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">getWeekDay</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./get-week-day&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #795E26">main</span><span style="color: #000000">(</span><span style="color: #0000FF">function*</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dayOfTheWeek</span><span style="color: #000000"> = </span><span style="color: #AF00DB">yield</span><span style="color: #000000"> </span><span style="color: #795E26">withTimeout</span><span style="color: #000000">(</span><span style="color: #795E26">fetchWeekDay</span><span style="color: #000000">(), </span><span style="color: #098658">1000</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`It is </span><span style="color: #0000FF">${</span><span style="color: #001080">dayOfTheWeek</span><span style="color: #0000FF">}</span><span style="color: #A31515">, my friends!`</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>If more than 1000 milliseconds passes before the <code>fetchWeekDay()</code>
+				operation completes, then an error will be raised.</p>
+				<p>What&#39;s important to note however, is that when we actually defined our
+					<code>fetchWeekDay()</code> operation, we never once had to worry about timeouts,
+					or request cancellation. And in order to achieve both we didn&#39;t have
+					to gum up our API by passing around cancellation tokens or <a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController">abort
+				controllers</a>. We just got it all for free.</p>
+				<a href="#discover-more" id="discover-more" style="color: inherit; text-decoration: none;">
+					<h2>Discover more</h2>
+				</a>
+				<p>This is just the tip of the iceberg when it comes to the seemingly complex
+					things that can Effection make simple. To find out more, jump
+					into the conversation <a href="https://discord.gg/Ug5nWH8">in our discord server</a>. We&#39;re really
+					excited about the things that Effection has enabled us to accomplish,
+					and we&#39;d love to hear your thoughts on it, and how you might see
+				it working for you.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
