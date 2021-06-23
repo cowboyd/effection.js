@@ -10,6 +10,7 @@
     "url": "https://github.com/thefrontside/effection.git",
     "directory": "packages/main"
   },
+  "typeDocEntry": "src/node.ts",
   "author": "Frontside Engineering <engineering@frontside.com>",
   "license": "MIT",
   "files": [

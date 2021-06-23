@@ -3,6 +3,7 @@
   "version": "2.0.0-beta.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typeDocEntry": "src/index.ts",
   "license": "MIT",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {

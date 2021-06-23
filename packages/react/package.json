@@ -11,6 +11,7 @@
     "url": "https://github.com/thefrontside/effection.git",
     "directory": "packages/react"
   },
+  "typeDocEntry": "src/index.ts",
   "author": "Frontside Engineering <engineering@frontside.com>",
   "license": "MIT",
   "files": [

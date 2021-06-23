@@ -34,7 +34,7 @@
     "prepack": "yarn workspaces run prepack",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
-    "docs": "yarn typedoc --packages . --out whaa"
+    "docs": "yarn typedoc --packages . --out website/docs/api/v2/"
   },
   "volta": {
     "node": "12.20.0",

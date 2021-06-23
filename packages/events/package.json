@@ -4,6 +4,7 @@
   "description": "Helpers for listening to events with effection",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typeDocEntry": "src/index.ts",
   "module": "dist/events.esm.js",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {

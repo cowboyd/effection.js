@@ -4,6 +4,7 @@
   "description": "A simple websocket server for Effection",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typeDocEntry": "src/index.ts",
   "module": "dist/websocket-server.esm.js",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
