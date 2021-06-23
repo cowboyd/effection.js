@@ -1,8 +1,20 @@
 diff --git a/node_modules/typedoc/dist/lib/application.js b/node_modules/typedoc/dist/lib/application.js
-index d8c786b..3949b4d 100644
+index d8c786b..489993b 100644
 --- a/node_modules/typedoc/dist/lib/application.js
 +++ b/node_modules/typedoc/dist/lib/application.js
-@@ -214,10 +214,10 @@ let Application = Application_1 = class Application extends component_1.Childabl
+@@ -84,8 +84,10 @@ function getEntryPointsForPackages(logger, packageGlobPaths) {
+             logger.error(`Entry point "${packageEntryPoint}" does not appear to be built by the tsconfig found at "${tsconfigFile}"`);
+             return;
+         }
++        let scope = /@effection\//;
++        let displayName = packageJson.name.replace(scope, '');
+         results.push({
+-            displayName: packageJson.name,
++            displayName,
+             path: packageEntryPoint,
+             program,
+             sourceFile,
+@@ -214,10 +216,10 @@ let Application = Application_1 = class Application extends component_1.Childabl
          const programs = entryPoints.map((e) => e.program);
          this.logger.verbose(`Converting with ${programs.length} programs`);
          const errors = array_1.flatMap(programs, ts.getPreEmitDiagnostics);
@@ -18,7 +30,7 @@ index d8c786b..3949b4d 100644
              for (const program of programs) {
                  program.emit();
 diff --git a/node_modules/typedoc/dist/lib/utils/package-manifest.js b/node_modules/typedoc/dist/lib/utils/package-manifest.js
-index 536ba34..d2c0016 100644
+index 536ba34..739f9af 100644
 --- a/node_modules/typedoc/dist/lib/utils/package-manifest.js
 +++ b/node_modules/typedoc/dist/lib/utils/package-manifest.js
 @@ -151,7 +151,11 @@ exports.ignorePackage = Symbol("ignorePackage");
@@ -26,7 +38,7 @@ index 536ba34..d2c0016 100644
      let packageMain = "index.js"; // The default, per the npm docs.
      let packageTypes = null;
 -    if (hasOwnProperty(packageJson, "main") &&
-+    if (hasOwnProperty(packageJson, typeDocEntry) && 
++    if (hasOwnProperty(packageJson, "typeDocEntry") && 
 +        typeof packageJson.typeDocEntry == "string") {
 +        packageMain = packageJson.typeDocEntry;
 +    }
