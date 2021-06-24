@@ -34,7 +34,7 @@
     "prepack": "yarn workspaces run prepack",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
-    "docs": "yarn typedoc --packages . --out docs/api/v2 --name effection --hideGenerator",
+    "docs": "yarn typedoc --options typedoc.json",
     "docs:preview": "yarn parcel docs/api/v2/index.html"
   },
   "volta": {

@@ -1,0 +1,21 @@
+{
+  "name": "effection",
+  "out": "docs/api/v2",
+  "hideGenerator": true,
+  "packages": [
+    "packages/atom",
+    "packages/channel",
+    "packages/core",
+    "packages/effection",
+    "packages/events",
+    "packages/fetch",
+    "packages/main",
+    "packages/mocha",
+    "packages/node",
+    "packages/process",
+    "packages/react",
+    "packages/subscription",
+    "packages/websocket-client",
+    "packages/websocket-server"
+  ]
+}
