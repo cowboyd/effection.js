@@ -29,3 +29,9 @@
 - when and how should it build and deploy?
   - since netlify runs a command and then deploys, we should generate typedocs each time (as opposed to trying to insert logic on whether or not it should); it will run typedocs twice: when a feature PR is merged and when the changeset Version Packages PR is merged
     - we could possibly disable deploying on branches and switch over to using build hooks create a new workflow to run only when a version packages PR is merged
+
+
+## config
+- just netlify.config configs = if base is set to 'website' from root, it will use the build command from the netlify config in website
+  - any netlify config files in the repo will override the netlify UI
+    - this means if we have netlify configs at root for api-docs and one in website for the guides, we won't be able to run build successfully for website
