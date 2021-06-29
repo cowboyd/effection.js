@@ -2,6 +2,7 @@
   "name": "effection",
   "out": "docs/api/v2",
   "hideGenerator": true,
+  "theme": "website/typedoc-theme/",
   "packages": [
     "packages/atom",
     "packages/channel",
