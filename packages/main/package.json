@@ -23,7 +23,6 @@
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "mocha -r ts-node/register --timeout 10000 test/**/*.test.ts",
     "prepack": "tsc --project tsconfig.dist.json",
-    "aaaadocs": "yarn typedoc src/node.ts",
     "mocha": "mocha -r ts-node/register"
   },
   "dependencies": {

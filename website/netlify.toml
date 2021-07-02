@@ -10,7 +10,7 @@
 
 [[redirects]]
   force = true
-  from = "/effection/api"
+  from = "/effection/api/*"
   status = 200
   to = "https://effection-api.netlify.app/:splat"
 
