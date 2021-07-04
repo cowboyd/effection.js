@@ -1,0 +1,58 @@
+{
+  "name": "@effection/devtools",
+  "version": "2.0.0-beta.1",
+  "description": "Effection dev tools",
+  "typings": "dist/index.d.ts",
+  "repository": "https://github.com/thefrontside/bigtest.git",
+  "author": "Frontside Engineering <engineering@frontside.io>",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint '{src,tests}/**/*.ts'",
+    "test:unit": "mocha -r ts-node/register test/**/*.test.ts",
+    "test:types": "dtslint test-dts --localTs ../../node_modules/typescript/lib --expectOnly",
+    "chrome:build": "parcel build --public-url '/dist' --no-optimize --dist-dir chrome/dist src/content-script.ts src/background.ts",
+    "chrome:watch": "parcel watch --public-url '/dist' --dist-dir chrome/dist src/content-script.ts src/background.ts",
+    "chrome:pack": "crx pack --zip-output dist/EffectionDevTools.zip chrome",
+    "chrome:test": "node chrome/test.js",
+    "chrome:run": "yarn chrome:build && yarn chrome:test",
+    "test": "yarn test:unit && yarn test:types",
+    "mocha": "mocha -r ts-node/register"
+  },
+  "devDependencies": {
+    "@effection/mocha": "2.0.0-beta.1",
+    "@effection/node": "2.0.0-beta.1",
+    "@frontside/tsconfig": "^0.0.1",
+    "@types/chrome": "^0.0.141",
+    "@types/node": "^13.13.5",
+    "chrome-launch": "^1.1.4",
+    "crx": "^5.0.1",
+    "expect": "^25.4.0",
+    "mocha": "^8.3.1",
+    "parcel": "next",
+    "regenerator-runtime": "^0.13.7",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.7.0"
+  },
+  "volta": {
+    "node": "12.16.0",
+    "yarn": "1.19.1"
+  },
+  "dependencies": {
+    "@effection/channel": "2.0.0-beta.2",
+    "@effection/core": "2.0.0-beta.2",
+    "@effection/inspect": "2.0.0-beta.2",
+    "@effection/events": "2.0.0-beta.2",
+    "@effection/subscription": "2.0.0-beta.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}

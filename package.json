@@ -24,7 +24,9 @@
       "packages/inspect-utils",
       "packages/inspect-ui",
       "packages/inspect-server",
+      "packages/devtools-hooks",
       "packages/inspect",
+      "packages/devtools",
       "packages/effection"
     ]
   },

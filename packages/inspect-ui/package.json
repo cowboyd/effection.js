@@ -16,9 +16,9 @@
     "src/**/*"
   ],
   "scripts": {
-    "prepack": "parcel build app/index.html --target browser",
-    "start": "parcel serve app/index.html --target browser",
-    "watch": "parcel watch app/index.html --target browser",
+    "prepack": "parcel build --target app ./app/index.html",
+    "start": "parcel serve --target app ./app/index.html",
+    "watch": "parcel watch --target app ./app/index.html",
     "lint": "eslint '{app,src,tests}/**/*.{ts,tsx}'",
     "test": "mocha -r ts-node/register --timeout 5000 test/**/*.test.{ts,tsx}",
     "docs": "echo noop",
@@ -55,5 +55,15 @@
   "volta": {
     "node": "12.16.0",
     "yarn": "1.19.1"
+  },
+  "app": "./dist/ui/index.html",
+  "targets": {
+    "app": {
+      "engines": {
+        "browsers": "last 2 Chrome versions"
+      },
+      "distDir": "./dist/ui",
+      "publicUrl": "/ui"
+    }
   }
 }

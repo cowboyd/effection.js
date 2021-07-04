@@ -3,6 +3,7 @@
   "version": "2.0.0-beta.4",
   "description": "Injects an inspector into an Effection application",
   "main": "index.js",
+  "browser": "browser.js",
   "repository": "https://github.com/thefrontside/bigtest.git",
   "author": "Frontside Engineering <engineering@frontside.com>",
   "license": "MIT",

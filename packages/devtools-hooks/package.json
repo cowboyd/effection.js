@@ -1,0 +1,53 @@
+{
+  "name": "@effection/devtools-hooks",
+  "version": "2.0.0-beta.1",
+  "description": "Hooks for attaching the Effection devtools",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/devtools-hooks.esm.js",
+  "repository": "https://github.com/thefrontside/bigtest.git",
+  "author": "Frontside Engineering <engineering@frontside.com>",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint '{src,tests}/**/*.ts'",
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "prepack": "tsdx build --tsconfig tsconfig.dist.json",
+    "mocha": "mocha -r ts-node/register",
+    "example": "parcel serve --target example ./examples/example.html"
+  },
+  "dependencies": {
+    "@effection/core": "2.0.0-beta.2",
+    "@effection/inspect-utils": "2.0.0-beta.2",
+    "@effection/events": "2.0.0-beta.2",
+    "@effection/subscription": "2.0.0-beta.2"
+  },
+  "devDependencies": {
+    "@effection/mocha": "2.0.0-beta.2",
+    "@frontside/tsconfig": "0.0.1",
+    "@types/node": "^13.13.5",
+    "expect": "^25.4.0",
+    "mocha": "^8.3.1",
+    "parcel": "next",
+    "ts-node": "^8.9.0",
+    "tsdx": "0.13.2",
+    "typescript": "^3.7.0"
+  },
+  "volta": {
+    "node": "12.16.0",
+    "yarn": "1.19.1"
+  },
+  "example": "./dist/example.html",
+  "targets": {
+    "example": {
+      "engines": {
+        "browsers": "last 2 Chrome versions"
+      }
+    }
+  }
+}
