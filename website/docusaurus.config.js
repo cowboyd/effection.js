@@ -28,10 +28,12 @@ module.exports = {
           position: 'left'
         },
         {
-          href: '/api',
+          to: '/api',
           label: 'API Reference',
-          position: 'left'
-        }, {
+          position: 'left',
+          redirect: true
+        }, 
+        {
           href: 'https://github.com/thefrontside/effection',
           label: 'GitHub',
           position: 'right',
