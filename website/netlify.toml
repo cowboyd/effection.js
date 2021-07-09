@@ -13,6 +13,7 @@
   from = "/effection/api/*"
   status = 200
   to = "https://effection-api.netlify.app/:splat"
+    # todo: this needs to be updated to https://v2--eeffection-api.netlify.app
 
 [[redirects]]
   from = "/*"

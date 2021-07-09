@@ -1,0 +1,25 @@
+name: Deploy API Docs
+
+on:
+  push:
+    branches:
+      - 'mk/ci-4-api' # todo: change to v2
+
+jobs:
+  deploy-typedoc:
+    name: Deploy API Docs
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        yarn
+        yarn prepack
+        yarn docs
+    - uses: actions/cache@v2
+      id: typedoc
+      with:
+        path: docs/api/v2
+        key: typedoc-cache
+    - name: Trigger Netlify Build
+      if: ${{ steps.typedoc.outputs.cache-hit != 'true' }}
+      run: curl -X POST -d {} ${{ secrets.DEPLOY_API_DOCS_V2 }}
