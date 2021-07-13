@@ -106,7 +106,6 @@ function Navbar() {
             })}
           />
           {leftItems.map((item, i) => {
-            console.log('itemz', item)
             if (item.redirect) {
               return (
                 <a href={item.to} class="navbar__item navbar__link">{item.label}</a>

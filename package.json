@@ -34,7 +34,7 @@
     "prepack": "yarn workspaces run prepack",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
-    "docs": "rm -rf docs/ && yarn typedoc --options typedoc.json",
+    "docs": "rm -rf docs && yarn typedoc --options typedoc.js",
     "docs:preview": "yarn parcel docs/api/v2/index.html"
   },
   "volta": {
