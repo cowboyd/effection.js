@@ -1,6 +1,6 @@
 {
   "name": "@effection/events",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "description": "Helpers for listening to events with effection",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,11 +27,11 @@
     "mocha": "mocha -r ts-node/register"
   },
   "dependencies": {
-    "@effection/core": "2.0.0-beta.3",
-    "@effection/subscription": "2.0.0-beta.3"
+    "@effection/core": "2.0.0-beta.4",
+    "@effection/subscription": "2.0.0-beta.4"
   },
   "devDependencies": {
-    "@effection/mocha": "2.0.0-beta.3",
+    "@effection/mocha": "2.0.0-beta.4",
     "@frontside/tsconfig": "^1.2.0",
     "@types/node": "^13.13.5",
     "expect": "^25.4.0",

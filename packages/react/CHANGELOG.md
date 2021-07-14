@@ -1,5 +1,13 @@
 # @effection/react
 
+## 2.0.0-beta.5
+
+### Patch Changes
+
+- Updated dependencies [e297c86]
+  - @effection/core@2.0.0-beta.4
+  - @effection/subscription@2.0.0-beta.4
+
 ## 2.0.0-beta.4
 
 ### Patch Changes

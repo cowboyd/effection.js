@@ -1,6 +1,6 @@
 {
   "name": "@effection/inspect",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "Injects an inspector into an Effection application",
   "main": "index.js",
   "homepage": "https://github.com/thefrontside/effection",
@@ -24,7 +24,7 @@
     "docs": "echo noop"
   },
   "dependencies": {
-    "@effection/inspect-server": "2.0.0-beta.4"
+    "@effection/inspect-server": "2.0.0-beta.5"
   },
   "volta": {
     "node": "12.16.0",

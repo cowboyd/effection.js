@@ -1,5 +1,11 @@
 # @effection/core
 
+## 2.0.0-beta.4
+
+### Patch Changes
+
+- e297c86: rename Task.spawn() -> Task.run()
+
 ## 2.0.0-beta.3
 
 ### Patch Changes
