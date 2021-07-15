@@ -12,12 +12,6 @@
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
   "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
@@ -41,7 +35,6 @@
     "typescript": "4.3.5"
   },
   "volta": {
-    "node": "12.16.0",
-    "yarn": "1.19.1"
+    "extends": "../../package.json"
   }
 }

@@ -11,13 +11,7 @@
     "directory": "packages/fetch"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-  "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
+    "license": "MIT",
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "prepack": "tsc --build tsconfig.dist.json",
@@ -41,5 +35,8 @@
     "abort-controller": "^3.0.0",
     "cross-fetch": "^3.0.4",
     "node-fetch": "^2.6.1"
+  },
+  "volta": {
+    "extends": "../../package.json"
   }
 }

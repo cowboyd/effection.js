@@ -2,19 +2,22 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/core/tsconfig.dist.json"
+    },
+    {
+      "path": "./packages/subscription/tsconfig.dist.json"
+    },
+    {
+      "path": "./packages/events/tsconfig.dist.json"
+    },
+    {
       "path": "./packages/atom/tsconfig.dist.json"
     },
     {
       "path": "./packages/channel/tsconfig.dist.json"
     },
     {
-      "path": "./packages/core/tsconfig.dist.json"
-    },
-    {
       "path": "./packages/effection/tsconfig.dist.json"
-    },
-    {
-      "path": "./packages/events/tsconfig.dist.json"
     },
     {
       "path": "./packages/fetch/tsconfig.dist.json"
@@ -42,9 +45,6 @@
     },
     {
       "path": "./packages/react/tsconfig.dist.json"
-    },
-    {
-      "path": "./packages/subscription/tsconfig.dist.json"
     },
     {
       "path": "./packages/websocket-client/tsconfig.dist.json"

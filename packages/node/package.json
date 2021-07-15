@@ -11,13 +11,7 @@
     "directory": "packages/node"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-  "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
+    "license": "MIT",
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "echo noop",
@@ -36,7 +30,6 @@
     "@effection/process": "2.0.0-beta.3"
   },
   "volta": {
-    "node": "12.16.0",
-    "yarn": "1.19.1"
+    "extends": "../../package.json"
   }
 }

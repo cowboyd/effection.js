@@ -10,7 +10,9 @@
     { "path": "../inspect-utils/tsconfig.dist.json" },
     { "path": "../events/tsconfig.dist.json" },
     { "path": "../main/tsconfig.dist.json" },
-    { "path": "../subscription/tsconfig.dist.json" }
+    { "path": "../react/tsconfig.dist.json" },
+    { "path": "../subscription/tsconfig.dist.json" },
+    { "path": "../websocket-client/tsconfig.dist.json" }
   ],
   "include": [
     "app/**/*.ts",

@@ -11,13 +11,7 @@
     "directory": "packages/mocha"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-  "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
+    "license": "MIT",
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "mocha -r ts-node/register --timeout 5000 test/**/*.test.ts",

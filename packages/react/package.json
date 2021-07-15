@@ -11,13 +11,7 @@
     "directory": "packages/react"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-  "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
+    "license": "MIT",
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.{ts,tsx}'",
     "test": "mocha -r ts-node/register 'test/**/*.test.{ts,tsx}'",
@@ -47,7 +41,6 @@
     "typescript": "4.3.5"
   },
   "volta": {
-    "node": "12.16.0",
-    "yarn": "1.19.1"
+    "extends": "../../package.json"
   }
 }

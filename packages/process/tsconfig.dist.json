@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig",
+  "references": [
+    { "path": "../channel/tsconfig.dist.json" },
+    { "path": "../core/tsconfig.dist.json" },
+    { "path": "../events/tsconfig.dist.json" },
+    { "path": "../subscription/tsconfig.dist.json" }
+  ],
   "exclude": ["./test/*"]
 }

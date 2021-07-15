@@ -13,11 +13,6 @@
   "private": false,
   "types": "dist/src/index.d.ts",
   "main": "dist/src/index.js",
-  "files": [
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
   "scripts": {
     "lint": "eslint '{src,bin,test}/**/*.ts'",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
@@ -42,5 +37,8 @@
     "tsdx": "0.14.1",
     "typedoc": "^0.20.36",
     "typescript": "4.3.5"
+  },
+  "volta": {
+    "extends": "../../package.json"
   }
 }

@@ -1,4 +1,7 @@
 {
   "extends": "./tsconfig",
+  "references": [
+    { "path": "../inspect-server/tsconfig.dist.json" },
+  ],
   "exclude": ["./test/*"]
 }
