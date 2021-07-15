@@ -13,7 +13,6 @@ jobs:
       change: ${{ steps.covector.outputs.change }}
       commandRan: ${{ steps.covector.outputs.commandRan }}
       successfulPublish: ${{ steps.covector.outputs.successfulPublish }}
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -45,3 +44,22 @@ jobs:
           branch: "release"
           body: ${{ steps.covector.outputs.change }}
           token: ${{ secrets.FRONTSIDEJACK_GITHUB_TOKEN }}
+
+  deploy-typedocs:
+    runs-on: ubuntu-latest
+    needs: version-or-publish
+    if: ${{ needs.version-or-publich.outputs.successfulPublish == 'true' }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          yarn
+          yarn prepack
+          yarn docs
+      - uses: actions/cache@v2
+        id: typedoc
+        with:
+          path: docs/api/v2
+          key: typedoc-cache
+      - name: Trigger Netlify Build
+        if: ${{ steps.typedoc.outputs.cache-hit != 'true' }}
+        run: curl -X POST -d {} ${{ secrets.DEPLOY_API_DOCS_V2 }}

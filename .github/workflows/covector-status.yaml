@@ -2,9 +2,10 @@ name: covector status
 on: [pull_request]
 
 jobs:
-  covector:
+  covector-status:
     runs-on: ubuntu-latest
-
+    outputs:
+      statoos: ${{ steps.covector.outputs.status }}
     steps:
       - uses: actions/checkout@v2
         with:
