@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@frontside/eslint-config": "1.1.1",
+    "@frontside/tsconfig": "^1.2.0",
     "covector": "^0.7.2",
     "patch-package": "6.2.2"
   }
