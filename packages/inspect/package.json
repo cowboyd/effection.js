@@ -10,7 +10,13 @@
     "directory": "packages/inspect"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-    "license": "MIT",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist/**/*",
+    "src/**/*"
+  ],
   "scripts": {
     "lint": "echo noop",
     "prepack": "echo noop",
@@ -21,6 +27,7 @@
     "@effection/inspect-server": "2.0.0-beta.4"
   },
   "volta": {
-    "extends": "../../package.json"
+    "node": "12.16.0",
+    "yarn": "1.19.1"
   }
 }

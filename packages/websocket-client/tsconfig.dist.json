@@ -1,5 +1,10 @@
 {
   "extends": "./tsconfig",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false
+  },
   "references": [
     { "path": "../core/tsconfig.dist.json" },
     { "path": "../events/tsconfig.dist.json" },

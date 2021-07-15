@@ -2,8 +2,8 @@
   "name": "@effection/main",
   "version": "2.0.0-beta.3",
   "description": "Main entry point for Effection applications",
-  "main": "dist/src/node.js",
-  "browser": "dist/src/browser.js",
+  "main": "dist/node.js",
+  "browser": "dist/browser.js",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",

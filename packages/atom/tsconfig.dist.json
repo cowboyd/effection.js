@@ -1,5 +1,10 @@
 {
   "extends": "./tsconfig",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false
+  },
   "references": [
     { "path": "../effection/tsconfig.dist.json" },
     { "path": "../channel/tsconfig.dist.json" },

@@ -2,8 +2,8 @@
   "name": "@effection/node",
   "version": "2.0.0-beta.3",
   "description": "Work in Node.js with Effection",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",

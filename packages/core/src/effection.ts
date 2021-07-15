@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Task, createTask } from './task';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
 import { version } from '../package.json';
 
 const MAJOR_VERSION = version.split('.')[0];
