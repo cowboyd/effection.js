@@ -2,58 +2,55 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/atom"
+      "path": "./packages/atom/tsconfig.dist.json"
     },
     {
-      "path": "./packages/channel"
+      "path": "./packages/channel/tsconfig.dist.json"
     },
     {
-      "path": "./packages/core"
+      "path": "./packages/core/tsconfig.dist.json"
     },
     {
-      "path": "./packages/effection"
+      "path": "./packages/effection/tsconfig.dist.json"
     },
     {
-      "path": "./packages/events"
+      "path": "./packages/events/tsconfig.dist.json"
     },
     {
-      "path": "./packages/fetch"
+      "path": "./packages/fetch/tsconfig.dist.json"
     },
     {
-      "path": "./packages/inspect"
+      "path": "./packages/inspect/tsconfig.dist.json"
     },
     {
-      "path": "./packages/inspect-server"
+      "path": "./packages/inspect-server/tsconfig.dist.json"
     },
     {
-      "path": "./packages/inspect-ui"
+      "path": "./packages/inspect-utils/tsconfig.dist.json"
     },
     {
-      "path": "./packages/inspect-utils"
+      "path": "./packages/main/tsconfig.dist.json"
     },
     {
-      "path": "./packages/main"
+      "path": "./packages/mocha/tsconfig.dist.json"
     },
     {
-      "path": "./packages/mocha"
+      "path": "./packages/node/tsconfig.dist.json"
     },
     {
-      "path": "./packages/node"
+      "path": "./packages/process/tsconfig.dist.json"
     },
     {
-      "path": "./packages/process"
+      "path": "./packages/react/tsconfig.dist.json"
     },
     {
-      "path": "./packages/react"
+      "path": "./packages/subscription/tsconfig.dist.json"
     },
     {
-      "path": "./packages/subscription"
+      "path": "./packages/websocket-client/tsconfig.dist.json"
     },
     {
-      "path": "./packages/websocket-client"
-    },
-    {
-      "path": "./packages/websocket-server"
+      "path": "./packages/websocket-server/tsconfig.dist.json"
     },
   ]
 }

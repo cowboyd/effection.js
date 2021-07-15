@@ -14,7 +14,8 @@ export function App({ client }: AppProps) {
     <div>
       <h1>Effection Inspector</h1>
 
-      {message && <TaskTree tree={message.tree}/>}
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+      {message && <TaskTree tree={(message as any).tree}/>}
     </div>
   );
 }

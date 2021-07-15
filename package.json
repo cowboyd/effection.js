@@ -31,7 +31,7 @@
   "scripts": {
     "clean": "git clean -dxf",
     "postinstall": "patch-package",
-    "prepack": "yarn workspaces run prepack",
+    "prepack": "tsc -b ./tsconfig.packages.json",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
     "docs": "yarn workspaces run docs",

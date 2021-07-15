@@ -3,7 +3,7 @@
   "version": "2.0.0-beta.3",
   "description": "MPMC Channel implementation for effection",
   "main": "dist/src/index.js",
-  "typings": "dist/src/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",

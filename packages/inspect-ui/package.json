@@ -5,7 +5,6 @@
   "main": "index.js",
   "types": "index.d.ts",
   "browser": "dist/index.html",
-  "module": "dist/inspect-ui.esm.js",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",
