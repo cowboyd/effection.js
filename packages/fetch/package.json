@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
-    "prepack": "tsdx build --tsconfig tsconfig.dist.json",
+    "prepack": "tsc --build tsconfig.dist.json",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
     "docs": "yarn typedoc src/index.ts",
     "mocha": "mocha -r ts-node/register"

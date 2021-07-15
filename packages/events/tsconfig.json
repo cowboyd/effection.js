@@ -1,8 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist/"
+  },
   "references": [
-    { "path": "../core" },
-    { "path": "../subscription" }
+    { "path": "../core/tsconfig.dist.json" },
+    { "path": "../subscription/tsconfig.dist.json" }
   ],
   "include": [
     "src/**/*.ts",

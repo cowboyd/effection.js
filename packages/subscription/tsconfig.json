@@ -5,7 +5,7 @@
     "outDir": "dist/"
   },
   "references": [
-    { "path": "../core" },
+    { "path": "../core/tsconfig.dist.json" },
   ],
   "include": [
     "src/**/*.ts",
