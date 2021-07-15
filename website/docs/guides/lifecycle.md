@@ -94,7 +94,7 @@ happens because the Task completes successfully, it becomes halted, or it is
 rejected due to an error.
 
 Imagine that we're doing something with an HTTP server, and we're using node's
-`createServer` function. In order to properly clean up afer ourselves, we
+`createServer` function. In order to properly clean up after ourselves, we
 should call `close()` on the server when we're done.
 
 Using Effection and `try/finally`, we could do something like this:

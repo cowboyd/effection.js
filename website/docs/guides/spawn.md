@@ -109,8 +109,8 @@ import { main, spawn } from 'effection';
 import { fetchWeekDay } from './fetch-week-day';
 
 main(function*() {
-  let dayUS = yield spawn(fetchWeekDay('est'));
-  let daySweden = yield spawn(fetchWeekDay('cet'));
+  let dayUS = spawn(fetchWeekDay('est'));
+  let daySweden = spawn(fetchWeekDay('cet'));
   console.log(`It is ${yield dayUS}, in the US and ${yield daySweden} in Sweden!`);
 });
 ```
