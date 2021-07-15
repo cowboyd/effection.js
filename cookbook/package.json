@@ -1,0 +1,21 @@
+{
+  "name": "effection-cookbook",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "websocket": "node ./websocket/websocket-with-on.mjs",
+    "chat:client": "parcel ./websocket-chat/index.html",
+    "chat:server": "ts-node ./websocket-chat/server.ts"
+  },
+  "devDependencies": {
+    "@effection/websocket-client": "file:../packages/websocket-client",
+    "@effection/websocket-server": "file:../packages/websocket-server",
+    "effection": "file:../packages/effection",
+    "parcel": "^2.0.0-beta.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2",
+    "ws": "^7.4.6"
+  }
+}
