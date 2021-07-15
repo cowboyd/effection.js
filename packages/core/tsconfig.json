@@ -1,17 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
     "resolveJsonModule": true,
-    "outDir": "dist/",
-    "baseUrl": "."
   },
   "include": [
     "test/**/*.ts",
     "src/**/*.ts",
-    "bin/*.ts",
     "package.json"
-  ],
-  "exclude": [
-    "test/**/*.ts"
   ]
 }

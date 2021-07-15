@@ -107,7 +107,7 @@ describe('generator function', () => {
   it('halts task when halted generator', async () => {
     let child: Task | undefined;
     let task = run(function*() {
-      yield function*(task) {
+      yield function*(task: Task) {
         child = task;
         yield sleep(100);
       }

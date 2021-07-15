@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "composite": true,
+    "declaration": true,
     "declarationMap": true,
     "paths": {
       "@effection/atom": ["packages/atom/src"],
