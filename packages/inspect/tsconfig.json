@@ -1,5 +1,8 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "references": [
+    { "path": "../inspect-server" },
+  ],
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"

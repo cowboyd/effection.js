@@ -1,5 +1,12 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "references": [
+    { "path": "../atom" },
+    { "path": "../channel" },
+    { "path": "../core" },
+    { "path": "../events" },
+    { "path": "../subscription" }
+  ],
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"

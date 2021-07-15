@@ -1,5 +1,12 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "references": [
+    { "path": "../core" },
+    { "path": "../inspect-utils" },
+    { "path": "../events" },
+    { "path": "../main" },
+    { "path": "../subscription" }
+  ],
   "compilerOptions": {
     "jsx": "react"
   },

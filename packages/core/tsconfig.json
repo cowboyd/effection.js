@@ -1,11 +1,17 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "outDir": "dist/",
+    "baseUrl": "."
   },
   "include": [
     "test/**/*.ts",
     "src/**/*.ts",
-    "bin/*.ts"
+    "bin/*.ts",
+    "package.json"
+  ],
+  "exclude": [
+    "test/**/*.ts"
   ]
 }
