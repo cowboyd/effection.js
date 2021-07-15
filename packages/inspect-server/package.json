@@ -2,8 +2,9 @@
   "name": "@effection/inspect-server",
   "version": "2.0.0-beta.4",
   "description": "Inspect server for inspecting effection processes",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/inspect-server.esm.js",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",
@@ -11,11 +12,17 @@
     "directory": "packages/inspect-server"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-    "license": "MIT",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist/**/*",
+    "src/**/*"
+  ],
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
-    "prepack": "tsc --build tsconfig.dist.json",
+    "prepack": "tsdx build --tsconfig tsconfig.dist.json",
     "mocha": "mocha -r ts-node/register",
     "docs": "yarn typedoc src/index.ts",
     "examples:basic": "ts-node ./examples/basic.ts"
@@ -35,17 +42,18 @@
   "devDependencies": {
     "@effection/mocha": "2.0.0-beta.3",
     "@frontside/tsconfig": "^1.2.0",
-    "@types/node": "16.3.2",
+    "@types/node": "^13.13.5",
     "@types/node-static": "^0.7.6",
     "@types/websocket": "^1.0.2",
     "expect": "^25.4.0",
     "mocha": "^8.3.1",
-    "ts-node": "10.1.0",
-    "tsdx": "0.14.1",
+    "ts-node": "^8.9.0",
+    "tsdx": "0.13.2",
     "typedoc": "^0.20.36",
-    "typescript": "4.3.5"
+    "typescript": "^3.7.0"
   },
   "volta": {
-    "extends": "../../package.json"
+    "node": "12.16.0",
+    "yarn": "1.19.1"
   }
 }

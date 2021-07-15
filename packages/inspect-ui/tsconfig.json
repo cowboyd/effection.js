@@ -1,22 +1,10 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@frontside/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist",
     "jsx": "react"
-  },  
-  "references": [
-    { "path": "../core/tsconfig.dist.json" },
-    { "path": "../inspect-utils/tsconfig.dist.json" },
-    { "path": "../events/tsconfig.dist.json" },
-    { "path": "../main/tsconfig.dist.json" },
-    { "path": "../react/tsconfig.dist.json" },
-    { "path": "../subscription/tsconfig.dist.json" },
-    { "path": "../websocket-client/tsconfig.dist.json" }
-  ],
+  },
   "include": [
     "app/**/*.ts",
-    "app/**/*.tsx",
     "src/**/*.ts",
     "test/**/*.ts"
   ]

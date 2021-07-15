@@ -1,16 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist"
-  },  
-  "references": [
-    { "path": "../atom/tsconfig.dist.json" },
-    { "path": "../channel/tsconfig.dist.json" },
-    { "path": "../core/tsconfig.dist.json" },
-    { "path": "../events/tsconfig.dist.json" },
-    { "path": "../subscription/tsconfig.dist.json" }
-  ],
+  "extends": "@frontside/tsconfig",
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"

@@ -23,15 +23,6 @@
       "path": "./packages/fetch/tsconfig.dist.json"
     },
     {
-      "path": "./packages/inspect/tsconfig.dist.json"
-    },
-    {
-      "path": "./packages/inspect-server/tsconfig.dist.json"
-    },
-    {
-      "path": "./packages/inspect-utils/tsconfig.dist.json"
-    },
-    {
       "path": "./packages/main/tsconfig.dist.json"
     },
     {
