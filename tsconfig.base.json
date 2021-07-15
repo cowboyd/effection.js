@@ -1,0 +1,28 @@
+{
+  "extends": "@frontside/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "declarationMap": true,
+    "paths": {
+      "@effection/atom": ["packages/atom/src"],
+      "@effection/channel": ["packages/channel/src"],
+      "@effection/core": ["packages/core/src"],
+      "effection": ["packages/effection/src"],
+      "@effection/events": ["packages/events/src"],
+      "@effection/fetch": ["packages/fetch/src"],
+      "@effection/inspect": ["packages/inspect/src"],
+      "@effection/inspect-server": ["packages/inspect-server/src"],
+      "@effection/inspect-ui": ["packages/inspect-ui/src"],
+      "@effection/inspect-utils": ["packages/inspect-utils/src"],
+      "@effection/main": ["packages/main/src"],
+      "@effection/mocha": ["packages/mocha/src"],
+      "@effection/node": ["packages/node/src"],
+      "@effection/process": ["packages/process/src"],
+      "@effection/react": ["packages/react/src"],
+      "@effection/subscription": ["packages/subscription/src"],
+      "@effection/websocket-client": ["packages/websocket-client/src"],
+      "@effection/websocket-server": ["packages/websocket-server/src"]
+    }
+  }
+}

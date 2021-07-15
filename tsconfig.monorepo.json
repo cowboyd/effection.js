@@ -1,0 +1,59 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/atom"
+    },
+    {
+      "path": "./packages/channel"
+    },
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/effection"
+    },
+    {
+      "path": "./packages/events"
+    },
+    {
+      "path": "./packages/fetch"
+    },
+    {
+      "path": "./packages/inspect"
+    },
+    {
+      "path": "./packages/inspect-server"
+    },
+    {
+      "path": "./packages/inspect-ui"
+    },
+    {
+      "path": "./packages/inspect-utils"
+    },
+    {
+      "path": "./packages/main"
+    },
+    {
+      "path": "./packages/mocha"
+    },
+    {
+      "path": "./packages/node"
+    },
+    {
+      "path": "./packages/process"
+    },
+    {
+      "path": "./packages/react"
+    },
+    {
+      "path": "./packages/subscription"
+    },
+    {
+      "path": "./packages/websocket-client"
+    },
+    {
+      "path": "./packages/websocket-server"
+    },
+  ]
+}
