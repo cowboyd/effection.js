@@ -1,7 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist"
+  },  
   "references": [
-    { "path": "../inspect-server" },
+    { "path": "../inspect-server/tsconfig.dist.json" },
   ],
   "include": [
     "src/**/*.ts",

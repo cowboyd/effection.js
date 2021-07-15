@@ -11,9 +11,8 @@
   "author": "Charles Lowell <cowboyd@frontside.com>",
   "license": "MIT",
   "private": false,
-  "typings": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist/effection.esm.js",
+  "types": "dist/src/index.d.ts",
+  "main": "dist/src/index.js",
   "files": [
     "CHANGELOG.md",
     "dist/**/*",
@@ -24,7 +23,7 @@
     "test": "mocha -r ts-node/register test/**/*.test.ts",
     "mocha": "mocha -r ts-node/register",
     "docs": "yarn typedoc src/index.ts",
-    "prepack": "tsdx build --tsconfig tsconfig.dist.json"
+    "prepack": "tsc --build tsconfig.dist.json"
   },
   "dependencies": {
     "@effection/channel": "2.0.0-beta.3",

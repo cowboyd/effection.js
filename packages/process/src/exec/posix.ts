@@ -74,6 +74,9 @@ export const createPosixProcess: CreateOSProcess = (command, options) => {
           stdoutChannel.close();
           stderrChannel.close();
           try {
+            if(typeof childProcess.pid === 'undefined') {
+              throw new Error('no pid for childProcess')
+            }
             process.kill(-childProcess.pid, "SIGTERM")
           } catch(e) {
             // do nothing, process is probably already dead
@@ -89,7 +92,7 @@ export const createPosixProcess: CreateOSProcess = (command, options) => {
         stderr = stderr.stringBuffer(scope);
       }
 
-      return { pid, stdin, stdout, stderr, join, expect }
+      return { pid: pid as number, stdin, stdout, stderr, join, expect }
     }
   }
 }

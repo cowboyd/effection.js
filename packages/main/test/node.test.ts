@@ -1,4 +1,3 @@
-import path from 'path';
 import expect from 'expect';
 import { describe, it, beforeEach } from '@effection/mocha';
 

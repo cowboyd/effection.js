@@ -2,8 +2,8 @@
   "name": "@effection/node",
   "version": "2.0.0-beta.3",
   "description": "Work in Node.js with Effection",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "echo noop",
     "docs": "yarn typedoc src/index.ts",
-    "prepack": "tsdx build --target node --format cjs --tsconfig tsconfig.dist.json"
+    "prepack": "tsc --build tsconfig.dist.json"
   },
   "devDependencies": {
     "@frontside/tsconfig": "^1.2.0",

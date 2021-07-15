@@ -1,8 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist"
+  },  
   "references": [
-    { "path": "../main" },
-    { "path": "../process" }
+    { "path": "../main/tsconfig.dist.json" },
+    { "path": "../process/tsconfig.dist.json" }
   ],
   "include": [
     "src/**/*.ts",

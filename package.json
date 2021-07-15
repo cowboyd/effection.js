@@ -34,7 +34,9 @@
     "prepack": "yarn workspaces run prepack",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
-    "docs": "yarn workspaces run docs"
+    "docs": "yarn workspaces run docs",
+    "build:tsc": "tsc -b ./tsconfig.packages.json",
+    "watch:tsc": "yarn build && \"$(npm bin)/tsc\" -b ./tsconfig.packages.json --watch"
   },
   "volta": {
     "node": "14.17.1",

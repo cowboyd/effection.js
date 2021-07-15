@@ -2,8 +2,8 @@
   "name": "@effection/process",
   "version": "2.0.0-beta.3",
   "description": "Spawn and manage external processes with Effection",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "mocha -r ts-node/register --timeout 10000 test/**/*.test.ts",
-    "prepack": "tsdx build --target node --format cjs --tsconfig tsconfig.dist.json",
+    "prepack": "tsc --build tsconfig.dist.json",
     "docs": "yarn typedoc src/index.ts",
     "mocha": "mocha -r ts-node/register"
   },
