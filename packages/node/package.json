@@ -11,32 +11,25 @@
     "directory": "packages/node"
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
-  "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
+    "license": "MIT",
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "echo noop",
     "docs": "yarn typedoc src/index.ts",
-    "prepack": "tsdx build --target node --format cjs --tsconfig tsconfig.dist.json"
+    "prepack": "tsc --build tsconfig.dist.json"
   },
   "devDependencies": {
     "@frontside/tsconfig": "^1.2.0",
-    "ts-node": "^8.9.0",
-    "tsdx": "0.13.2",
+    "ts-node": "10.1.0",
+    "tsdx": "0.14.1",
     "typedoc": "^0.20.36",
-    "typescript": "^3.7.0"
+    "typescript": "4.3.5"
   },
   "dependencies": {
     "@effection/main": "2.0.0-beta.3",
     "@effection/process": "2.0.0-beta.3"
   },
   "volta": {
-    "node": "12.16.0",
-    "yarn": "1.19.1"
+    "extends": "../../package.json"
   }
 }

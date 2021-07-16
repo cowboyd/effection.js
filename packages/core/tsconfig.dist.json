@@ -1,7 +1,9 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "module": "esnext"
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false
   },
-  "exclude": ["./test/*", "./bin/*"]
+  "exclude": ["./test/*"]
 }

@@ -1,8 +1,14 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
     "jsx": "react"
-  },
+  },  
+  "references": [
+    { "path": "../core/tsconfig.dist.json" },
+    { "path": "../subscription/tsconfig.dist.json" }
+  ],
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"

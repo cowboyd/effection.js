@@ -34,7 +34,9 @@
     "prepack": "yarn workspaces run prepack",
     "test": "yarn workspaces run test",
     "lint": "yarn workspaces run lint",
-    "docs": "yarn workspaces run docs"
+    "docs": "yarn workspaces run docs",
+    "build:tsc": "tsc -b ./tsconfig.packages.json",
+    "watch:tsc": "yarn build && \"$(npm bin)/tsc\" -b ./tsconfig.packages.json --watch"
   },
   "volta": {
     "node": "14.17.1",
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "@frontside/eslint-config": "1.1.1",
+    "@frontside/tsconfig": "^1.2.0",
     "covector": "^0.7.2",
     "patch-package": "6.2.2"
   }

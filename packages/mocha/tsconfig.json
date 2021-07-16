@@ -1,5 +1,12 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "."
+  },
+  "references": [
+    { "path": "../core/tsconfig.dist.json" },
+  ],
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"

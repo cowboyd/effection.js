@@ -24,7 +24,7 @@ export function fetch(info: RequestInfo, requestInit: RequestInit = {}): Fetch {
 
     requestInit.signal = controller.signal;
 
-    let response = yield nativeFetch(info, requestInit);
+    let response: Response = yield nativeFetch(info, requestInit);
     return response;
   };
 

@@ -1,7 +1,15 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "module": "esnext"
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false
   },
+  "references": [
+    { "path": "../effection/tsconfig.dist.json" },
+    { "path": "../channel/tsconfig.dist.json" },
+    { "path": "../core/tsconfig.dist.json" },
+    { "path": "../subscription/tsconfig.dist.json" }
+  ],
   "exclude": ["./test/*"]
 }

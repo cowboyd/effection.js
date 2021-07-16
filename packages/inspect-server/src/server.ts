@@ -30,6 +30,7 @@ export function createInspectServer(options: Options = {}): Resource<InspectServ
 
       let connections: WebSocketServer<ServerMessage, ClientMessage> = yield createWebSocketSubscription({ http });
 
+      // something wrong here i think
       yield spawn(function*() {
         while(true) {
           let connection: WebSocketConnection<ServerMessage, ClientMessage> = yield connections.expect();
@@ -43,6 +44,7 @@ export function createInspectServer(options: Options = {}): Resource<InspectServ
           });
         }
       });
+      // ---------------------
 
       http.listen(options.port);
       yield ensure(() => { http.close(); });

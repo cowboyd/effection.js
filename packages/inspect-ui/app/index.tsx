@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 import { App } from './app';
 
 main(function*(scope) {
-  let url = new URL(location);
+  let url = new URL(location.href);
   let port = url.searchParams.get('port') || location.port;
 
   let client: WebSocketClient<InspectTree> = yield createWebSocketClient(`ws://localhost:${port}`);

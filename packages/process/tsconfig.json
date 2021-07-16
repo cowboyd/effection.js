@@ -1,5 +1,15 @@
 {
-  "extends": "@frontside/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true
+  },  
+  "references": [
+    { "path": "../channel/tsconfig.dist.json" },
+    { "path": "../core/tsconfig.dist.json" },
+    { "path": "../events/tsconfig.dist.json" },
+    { "path": "../subscription/tsconfig.dist.json" }
+  ],
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"

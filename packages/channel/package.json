@@ -3,7 +3,7 @@
   "version": "2.0.0-beta.3",
   "description": "MPMC Channel implementation for effection",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/thefrontside/effection",
   "repository": {
     "type": "git",
@@ -12,33 +12,26 @@
   },
   "author": "Frontside Engineering <engineering@frontside.io>",
   "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
   "scripts": {
     "lint": "eslint '{src,tests}/**/*.ts'",
     "test": "mocha -r ts-node/register test/**/*.test.ts",
-    "prepack": "tsdx build --tsconfig tsconfig.dist.json",
+    "prepack": "tsc --build tsconfig.dist.json",
     "docs": "yarn typedoc src/index.ts",
     "mocha": "mocha -r ts-node/register"
   },
   "devDependencies": {
     "@effection/mocha": "2.0.0-beta.3",
     "@frontside/tsconfig": "^1.2.0",
-    "@types/node": "^13.13.5",
+    "@types/node": "16.3.2",
     "expect": "^25.4.0",
     "mocha": "^8.3.1",
-    "ts-node": "^8.9.0",
-    "tsdx": "0.13.2",
+    "ts-node": "10.1.0",
+    "tsdx": "0.14.1",
     "typedoc": "^0.20.36",
-    "typescript": "^3.7.0"
+    "typescript": "4.3.5"
   },
   "volta": {
-    "node": "12.16.0",
-    "yarn": "1.19.1"
+    "extends": "../../package.json"
   },
   "dependencies": {
     "@effection/core": "2.0.0-beta.3",

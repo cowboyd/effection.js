@@ -102,7 +102,7 @@ export const createWin32Process: CreateOSProcess = (command, options) => {
         stderr = stderr.stringBuffer(scope);
       }
 
-      return { pid, stdin, stdout, stderr, join, expect };
+      return { pid: pid as number, stdin, stdout, stderr, join, expect };
     }
   }
 };
