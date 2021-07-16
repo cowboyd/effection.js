@@ -11,12 +11,6 @@
   },
   "author": "Frontside Engineering <engineering@frontside.com>",
   "license": "MIT",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "dist/**/*",
-    "src/**/*"
-  ],
   "scripts": {
     "lint": "echo noop",
     "prepack": "echo noop",
