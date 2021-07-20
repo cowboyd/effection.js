@@ -1,4 +1,4 @@
-import { spawn, Task, Operation, createFuture } from '@effection/core';
+import { spawn, Task, Operation, createFuture, label, withLabels } from '@effection/core';
 import { createChannel } from '@effection/channel';
 import { on, once, onceEmit } from '@effection/events';
 import { spawn as spawnProcess } from 'child_process';
@@ -59,22 +59,31 @@ export const createPosixProcess: CreateOSProcess = (command, options) => {
       };
 
       yield spawn(function*(task) {
+        yield label({ name: 'exec', state: 'running' });
         yield spawn(function*() {
-          let value: Error = yield once(childProcess, 'error');
+          yield label({ name: 'listen for error' });
+          let value: Error = yield withLabels(once(childProcess, 'error'), {
+            name: 'untilFirst(error)',
+            source: 'ChildProcess',
+          });
           resolve({ state: 'completed', value: { type: 'error', value } });
         }).within(task);
 
+        // future TODO: label streams for stdout and stderr
         yield spawn(on<Buffer>(childProcess.stdout, 'data').map((c) => c.toString()).forEach(stdoutChannel.send)).within(task);
         yield spawn(on<Buffer>(childProcess.stderr, 'data').map((c) => c.toString()).forEach(stderrChannel.send)).within(task);
 
         try {
-          let value = yield onceEmit(childProcess, 'exit');
+          let value = yield withLabels(onceEmit(childProcess, 'exit'), {
+            name: 'on(exit)',
+            source: 'ChildProcess',
+          });
           resolve({ state: 'completed', value: { type: 'status', value } });
         } finally {
           stdoutChannel.close();
           stderrChannel.close();
           try {
-            process.kill(-childProcess.pid, "SIGTERM")
+            process.kill(-childProcess.pid, 'SIGTERM')
           } catch(e) {
             // do nothing, process is probably already dead
           }
